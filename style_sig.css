@@ -27,10 +27,6 @@ html, body{
   text-align: center;
 }
 
-@media screen and (max-width: 768px){
-  .conten h1{
-    font-size: 250%;
-  }
   .btn{
     font-size: 110%;
     padding: 7px 15px;
