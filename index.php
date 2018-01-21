@@ -9,12 +9,24 @@
 
 <body>
 
-<!-- Login form -->
 
-<div id="Login">
-  <section>
-    <div class="inner">
-      <div class="content">
+  <button id="roundButton"></button>
+
+  <div id="flyoutMenu">
+    <h2><a href="#">Home</a></h2>
+    <h2><a href="#">About</a></h2>
+    <h2><a href="#">Contact</a></h2>
+    <h2><a href="#">Search</a></h2>
+  </div>
+
+
+
+<!-- Login form -->
+<div id="flyoutLog">
+  <div id="Login">
+    <section>
+      <div class="inner">
+        <div class="content">
 
           <form id="login-box" action="includes/login.inc.php" method="POST">
               <img src="img/avatar.png" class="avatar">
@@ -24,42 +36,44 @@
               <p>Password</p>
               <input type="password" name="pwd" placeholder="Enter Password">
 
-              <button type="submit" name="submit">Login</button>
+              <div id="inLogin_btn"><button type="submit" name="submit">Login</button></div>
 
               <a class="lilbtn" href="#">Lost your password?</a><br>
               <a class="lilbtn" href="Signup.php">Don't have an account?</a>
 
-          </form>
+            </form>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
+  </div>
 </div>
 
 
 <!-- Header form -->
+<div class="header">
 
+  <div>
 
-<div class"header">
+  </div>
 
   <ul class="nav" id="nav">
     <li><a href="#nav">Home</a></li>
     <li><a href="#nav">Amv's</a></li>
     <li><a href="#nav">Services</a></li>
     <li><a href="#nav">Work</a></li>
-    <li><a href="#">Login</a></li>
+    <li><button id="Log_btn">Login</button><li>
     <li><form action="includes/logout.inc.php" method="POST"><button class="logout" type="submit" name="submit">Logout</button></form></li>
   </ul>
 
-  </div>
-<button id="roundButton">okok</button>
+</div>
 
 
 
-
+<!-- script for the page-top -->
 
   <script>
   var roundButton = document.querySelector("#roundButton");
-  var flyoutMenu = document.querySelector("#Login");
+  var flyoutMenu = document.querySelector("#flyoutMenu");
 
   roundButton.addEventListener("click", showMenu, false);
   flyoutMenu.addEventListener("click", hideMenu, false);
@@ -71,7 +85,28 @@
   }
   function hideMenu(e) {
     flyoutMenu.classList.remove("show");
-    flyoutMenu.classList.add("hidden");
+    e.stopPropagation();
+
+    document.body.style.overflow = "auto";
+  }
+
+
+
+
+  var Log_btn = document.querySelector("#Log_btn");
+  var flyoutLog = document.querySelector("#flyoutLog");
+  var inLogin_btn = document.querySelector("#inLogin_btn");
+
+  Log_btn.addEventListener("click", showLog, false);
+  flyoutLog.addEventListener("click", hideLog, false);
+
+  function showLog(e) {
+    flyoutLog.classList.add("show");
+
+    document.body.style.overflow = "hidden";
+  }
+  function hideLog(e) {
+    flyoutLog.classList.remove("show");
     e.stopPropagation();
 
     document.body.style.overflow = "auto";
@@ -83,9 +118,12 @@
 
 
 
-<!-- <div id="idiv"><iframe id="iframe_main" width="560" height="315" src="https://www.youtube-nocookie.com/embed/QYxpY-U37aY?rel=0&controls=0&disablekb=1&modestbranding=1&showinfo=0&iv_load_policy=3&fs=0&autoplay=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen class="vid"></iframe></div> -->
 <div class="main-body">
+
+    <!-- title -->
   <h1>heyyyyyyyyy</h1>
+
+    <!-- front page info -->
   <div class="main-txt">
       <h2>Today's random pick</h2>
 

@@ -2,14 +2,14 @@
 <html>
 <head>
   <title>Full Screen Landing Page</title>
-  <link rel="stylesheet" type="text/css" href="style_sig.css">
+  <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 <body>
-  <section class="intro">
+  <section id="Signup-box">
     <div class="inner">
       <div class="content">
 
-        <form class="login-box" action="includes/signup.inc.php" method="POST">
+        <form class="Signup-box" action="includes/signup.inc.php" method="POST">
           <img src="img/avatar.png" class="avatar">
             <p>Firstname</p>
             <input type="text" name="first" placeholder="Enter Firstname">

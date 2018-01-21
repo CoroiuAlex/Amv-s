@@ -6,9 +6,14 @@ html, body{
   width: 100%;
 }
 
+
+
 @media screen and (max-width: 768px){
 
   }
+
+
+/* INDEX.PHP */
 
 
 /* Login Form
@@ -34,9 +39,24 @@ html, body{
   transition: transform .5s cubic-bezier(0, .52, 0, 1);
 }
 */
+#flyoutLog {
+  width: 100vw;
+  height: 100vh;
+  background: url(img/pic5.jpg) no-repeat fixed;
+  background-size: cover;
+  position: fixed;
+  top: 0;
+  left: 0;
+  transform: translate3d(0, -100vw, 0);
+  transition: transform .6s cubic-bezier(1, .52, 0, 1);
+  overflow: scroll;
+  z-index: 1000;
+}
+#flyoutLog.show{
+  transform: translate3d(0, 0vw, 0);
+}
 
 #Login{
-
   height: 100%;
   width: 100%;
   margin: auto;
@@ -129,6 +149,149 @@ body{
   color: darkgrey;
 }
 
+
+/* Button */
+
+#roundButton {
+  position: fixed;
+  float: left;
+  background-color: #96D9FF;
+  margin-top: 25px;
+  margin-left: 20px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 10px solid #0065A6;
+  outline: none;
+  transition: transform .3s cubic-bezier(0, .52, 0, 1);
+}
+
+#roundButton:hover {
+  background-color: #96D9FF;
+  cursor: pointer;
+  border-color: #003557;
+  transform: scale(1.2, 1.2);
+}
+
+#roundButton:active {
+  border-color: #003557;
+  background-color: #FFF;
+}
+
+#flyoutMenu {
+  width: 100vw;
+  height: 100vh;
+  background: url(img/pic5.jpg) no-repeat fixed;
+  background-size: cover;
+  position: fixed;
+  top: 0;
+  left: 0;
+  transform: translate3d(-100vw, 0, 0);
+  transition: transform .3s cubic-bezier(0, .52, 0, 1);
+  overflow: scroll;
+  z-index: 1000;
+}
+#flyoutMenu.show{
+  transform: translate3d(0vw, 0, 0);
+}
+
+#flyoutMenu h2 a {
+  color: #333;
+  margin-left: 15px;
+  text-decoration: none;
+}
+#flyoutMenu h2 a:hover {
+  text-decoration: underline;
+}
+
+
+/* Header */
+
+
+
+.nav{
+  margin: 0;
+  padding: 0;
+  background-color: #595959;
+  color: #fff;
+  list-style: none;
+  text-align: center;
+  padding: 20px 0 20px 0;
+}
+.nav > li {
+  display: inline-block;
+  padding: 0 25px 0 25px;
+}
+.nav > li > a {
+  text-decoration: none;
+  color: #fff;
+}
+
+.nav > li > a:hover{
+  color: #c1c1c1;
+}
+.nav button{
+  border: none;
+  outline: none;
+  height: 110%;
+  width: 130%;
+  background: #CA0000;
+  color: #f6f6f6;
+  font-size: 18px;
+  border-radius: 10px;
+}
+.nav button:active{
+  background: #fb2525;
+}
+
+
+
+
+/* Main text */
+
+.main-body{
+  height: 100%;
+  width: 100%;
+  margin: auto;
+  background: url(img/pic1.jpg) no-repeat fixed;
+  display: table;
+  background-size: cover;
+}
+
+.main-txt{
+  background: rgba(256, 256, 256, 0.75);
+  margin: 5% 20%;
+  padding: 5% 5%;
+
+}
+.main-body h1{
+  text-align: center;
+  margin-top: 5%;
+  color: #f6f6f6;
+  font-size: 56px;
+  font-family: fantasy;
+}
+
+.main-txt h2{
+  text-align: center;
+}
+#iframe_sec{
+ padding-left: calc(50% - 280px);
+
+}
+
+#div{
+  top: 4100px;
+  left: 90px;
+  right: 4034px;
+  bottom: 430px;
+}
+
+
+
+/* SIGNUP.PHP */
+
+
 /* Signup Box */
 
 #Signup-box{
@@ -207,84 +370,4 @@ body{
   font-size: 12px;
   line-height: 20px;
   color: darkgrey;
-}
-
-
-/* Header */
-
-.nav{
-  margin: 0;
-  padding: 0;
-  background-color: #595959;
-  color: #fff;
-  list-style: none;
-  text-align: center;
-  padding: 20px 0 20px 0;
-}
-.nav > li {
-  display: inline-block;
-  padding: 0 25px 0 25px;
-}
-.nav > li > a {
-  text-decoration: none;
-  color: #fff;
-}
-
-.nav > li > a:hover{
-  color: #c1c1c1;
-}
-.nav button{
-  border: none;
-  outline: none;
-  height: 110%;
-  width: 130%;
-  background: #CA0000;
-  color: #f6f6f6;
-  font-size: 18px;
-  border-radius: 10px;
-}
-.nav button:active{
-  background: #fb2525;
-}
-
-
-
-/* Main text */
-
-.main-body{
-  height: 100%;
-  width: 100%;
-  margin: auto;
-  background: url(img/pic1.jpg) no-repeat fixed;
-  display: table;
-  background-size: cover;
-}
-
-.main-txt{
-  background: rgba(256, 256, 256, 0.75);
-  margin: 5% 20%;
-  padding: 5% 5%;
-
-}
-.main-body h1{
-  text-align: center;
-  margin-top: 5%;
-  color: #f6f6f6;
-  font-size: 56px;
-  font-family: fantasy;
-}
-
-.main-txt h2{
-  text-align: center;
-}
-#iframe_sec{
- padding-left: calc(50% - 280px);
-
-}
-
-#div{
-  top: 4100px;
-  left: 90px;
-  right: 4034px;
-  bottom: 430px;
 }
